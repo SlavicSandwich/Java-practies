@@ -1,6 +1,4 @@
-package authro;
-
-import authro.Author;
+package Second.Help;
 
 public class TestAuthor{
     public static void main(String[] args) {

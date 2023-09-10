@@ -1,4 +1,4 @@
-package Circle;
+package Second.Circle;
 
 class Circle {
     double radius;
@@ -32,17 +32,17 @@ class Circle {
     }
 
 //    @Override
-//    public boolean equals(Circle circle){
+//    public boolean equals(Second.authro.Circle circle){
 //        if (this == circle)
 //            return true;
 //
 //        if (circle == null)
 //            return false;
 //
-//        if (!(circle instanceof Circle))
+//        if (!(circle instanceof Second.authro.Circle))
 //            return false;
 //
-//        Circle circle1 = (Circle) circle;
+//        Second.authro.Circle circle1 = (Second.authro.Circle) circle;
 //        return this.radius == circle1.radius;
 //    }
 }
