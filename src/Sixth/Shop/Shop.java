@@ -1,29 +1,29 @@
 package Sixth.Shop;
 
-
 import java.util.ArrayList;
 import java.util.Objects;
 
-enum Computer{
-    AMD("Bad Monitor", "Bad memory", "Good processor"),
-    INTEL("Bad Monitor", "Bad memory", "Bad processor"),
-    NVIDIA("Good Monitor", "Good memory", "Bad processor");
+enum Computer {
+    AMD("Bad monitor", "Bad memory", "Good processor"),
+    INTEL("Bad monitor", "Bad memory", "Bad processor"),
+    NVIDIA("Good monitor", "Good memory", "Bad processor");
 
     Puter puter;
-    Computer(String monitor, String memory, String processor){
+
+    Computer(String monitor, String memory, String processor) {
         this.puter = new Puter(processor, memory, monitor);
     }
 
 }
 
-interface HardWare{
+interface HardWare {
     public void hardWareNamePrint();
 }
 
-class Processor implements HardWare{
+class Processor implements HardWare {
     public String name;
 
-    public Processor(String name){
+    public Processor(String name) {
         this.name = name;
     }
 
@@ -37,11 +37,10 @@ class Processor implements HardWare{
     }
 }
 
-
-class Memory implements HardWare{
+class Memory implements HardWare {
     public String name;
 
-    public Memory(String name){
+    public Memory(String name) {
         this.name = name;
     }
 
@@ -55,10 +54,10 @@ class Memory implements HardWare{
     }
 }
 
-class Monitor implements HardWare{
+class Monitor implements HardWare {
     protected String name;
 
-    public Monitor(String name){
+    public Monitor(String name) {
         this.name = name;
     }
 
@@ -72,24 +71,24 @@ class Monitor implements HardWare{
     }
 }
 
-class Puter{
+class Puter {
     Monitor monitor;
     Memory memory;
     Processor processor;
 
-    public Puter(String processor, String memory, String monitor){
+    public Puter(String processor, String memory, String monitor) {
         this.memory = new Memory(memory);
         this.monitor = new Monitor(monitor);
         this.processor = new Processor(processor);
     }
 
-    public void getSpecs(){
+    public void getSpecs() {
         memory.hardWareNamePrint();
         monitor.hardWareNamePrint();
         processor.hardWareNamePrint();
     }
 
-    public boolean CompareSpecs(String processor, String memory, String monitor){
+    public boolean CompareSpecs(String processor, String memory, String monitor) {
         return Objects.equals(this.processor.getName(), processor) &&
                 this.memory.getName().equals(memory) && this.monitor.getName().equals(monitor);
     }
@@ -98,28 +97,37 @@ class Puter{
 class Shop {
     private ArrayList<Computer> puters = new ArrayList<Computer>();
 
-    public void add(String name){
-        switch (name){
-            case "Nvidia" ->{
+    public void add(String name) {
+        switch (name) {
+            case "Nvidia" -> {
                 puters.add(Computer.NVIDIA);
             }
-            case "AMD" ->{
+            case "AMD" -> {
                 puters.add(Computer.AMD);
             }
-            case "Intel" ->{
+            case "Intel" -> {
                 puters.add(Computer.INTEL);
             }
         }
     }
 
-    public boolean findPuter(String processor, String memory, String monitor){
-        for (int i = 0; i < puters.size(); i++){
+    public boolean findPuter(String processor, String memory, String monitor) {
+        System.out.println(puters.get(0).puter.processor.getName());
+        System.out.println(puters.get(0).puter.memory.getName());
+        System.out.println(puters.get(0).puter.monitor.getName());
+        for (int i = 0; i < puters.size(); i++) {
             if (puters.get(i).puter.processor.getName().equals(processor) &&
                     puters.get(i).puter.memory.getName().equals(memory) &&
-                    puters.get(i).puter.monitor.getName().equals(monitor)){
+                    puters.get(i).puter.monitor.getName().equals(monitor)) {
                 return true;
             }
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        Shop shop = new Shop();
+        shop.add("Nvidia");
+        System.out.println(shop.findPuter("Bad processor", "Good memory", "Good monitor"));
     }
 }

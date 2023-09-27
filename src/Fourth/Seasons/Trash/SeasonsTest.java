@@ -1,4 +1,4 @@
-package Fourth.Seasons;
+package Fourth.Seasons.Trash;
 
 enum Seasons {
   SUMMER {

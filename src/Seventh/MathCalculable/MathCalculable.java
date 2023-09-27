@@ -16,4 +16,9 @@ class MathFunc implements MathCalculable {
   public double absolute(double real, double fake) {
     return Math.sqrt(real * real + fake * fake);
   }
+
+  public static void main(String[] args) {
+    MathCalculable meth = new MathFunc();
+    System.out.println(meth.power(5, 10));
+  }
 }
