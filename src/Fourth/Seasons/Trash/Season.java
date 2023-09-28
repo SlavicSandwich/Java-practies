@@ -1,4 +1,4 @@
-package Fourth.Seasons;
+package Fourth.Seasons.Trash;
 
 public class Season {
   private String name;
