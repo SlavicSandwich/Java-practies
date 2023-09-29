@@ -10,6 +10,16 @@ class Student{
         this.name = name;
     }
 
+    public int getGPA() {
+        return GPA;
+    }
+}
+
+class StundentComparatoorGPA implements Comparator<Student> {
+    @Override
+    public int compare(Student o1, Student o2) {
+        return o1.getGPA() - o2.getGPA();
+    }
 }
 public class StudentGpaSort {
 
@@ -25,15 +35,16 @@ public class StudentGpaSort {
     }
 
     static int partition(List<Student> list, int left, int right) {
-        int P = list.get(left).GPA;
+        Student P = list.get(left);
         int i = left;
         int j = right + 1;
+        StundentComparatoorGPA comporator = new StundentComparatoorGPA();
         for (;;) { // infinite for-loop, break to exit
-            while (list.get(++i).GPA < P)
+            while (comporator.compare(list.get(++i), P) < 0)
                 if (i >= right)
                     break;
             // Now, list[i]≥P
-            while (list.get(--j).GPA > P)
+            while (comporator.compare(list.get(--j), P) > 0)
                 if (j <= left)
                     break;
             // Now, list[j]≤P
