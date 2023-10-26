@@ -36,7 +36,7 @@ class telephone {
   }
 
   public static void main(String[] args) {
-    telephone tel = new telephone("+79131638283");
+    telephone tel = new telephone("89131638283");
     System.out.println(tel.getNumber());
   }
 }
