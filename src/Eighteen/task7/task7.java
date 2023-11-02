@@ -34,7 +34,7 @@ class Task7 {
 }
 
 
-public class TaskTest7 {
+class TaskTest7 {
     public static void main(String[] args) {
         Task7 throwsDemo = new Task7();
         throwsDemo.getKey();
