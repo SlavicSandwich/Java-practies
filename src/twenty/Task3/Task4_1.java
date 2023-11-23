@@ -9,5 +9,10 @@ public class Task4_1 {
         double multiplyResult = Calculator.multiply(a, b); // Результат: 12.5
         double divideResult = Calculator.divide(a, b); // Результат: 2.0
         double subtractionResult = Calculator.subtraction(a, b); // Результат: 2.5
+        System.out.println(sumResult);
+        System.out.println(multiplyResult);
+        System.out.println(divideResult);
+        System.out.println(subtractionResult);
+
     }
 }
