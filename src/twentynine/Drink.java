@@ -3,8 +3,8 @@ package twentynine;
 import java.util.Objects;
 
 public final class Drink implements Item {
-    private final int cost;
     private final String name, description;
+    private final int cost;
 
     public Drink(String name, String description, int cost) throws IllegalArgumentException {
         if (cost == 0 || Objects.equals(name, "") || Objects.equals(description, ""))

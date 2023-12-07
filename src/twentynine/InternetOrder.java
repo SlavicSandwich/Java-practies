@@ -1,10 +1,20 @@
 package twentynine;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class InternetOrder implements Order {
-    List<Item> list = new ArrayList<>();
+//    List<Item> list = new ArrayList<>();
+    List<Item> list;
+
+    public InternetOrder(){
+        List<Item> list = new ArrayList<>();
+
+    }
+    public InternetOrder(Item[] arr){
+        List<Item> list = new ArrayList<>(Arrays.asList(arr));
+    }
 
     public void addPosition(Item item) {
         list.add(item);
